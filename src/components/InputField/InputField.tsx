@@ -56,11 +56,14 @@ const InputField: React.FC<InputFieldProps> = ({
       "w-full border transition-colors duration-200 focus:outline-none focus:ring-2 shadow-sm";
     switch (variant) {
       case "filled":
-        return `${baseClasses} bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:bg-white dark:focus:bg-gray-900 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/20 dark:focus:ring-blue-400/20 placeholder-gray-400 dark:placeholder-gray-500`;
+        // More contrast, subtle shadow, clear focus, better dark mode
+        return `${baseClasses} bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:bg-white dark:focus:bg-gray-900 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/30 dark:focus:ring-blue-400/30 placeholder-gray-500 dark:placeholder-gray-400`;
       case "ghost":
-        return `${baseClasses} bg-transparent border border-transparent focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/20 dark:focus:ring-blue-400/20 placeholder-gray-400 dark:placeholder-gray-500`;
+        // No border, clear focus, transparent background, better placeholder
+        return `${baseClasses} bg-transparent border border-transparent focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/30 dark:focus:ring-blue-400/30 placeholder-gray-500 dark:placeholder-gray-400`;
       default: // outlined
-        return `${baseClasses} bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/20 dark:focus:ring-blue-400/20 placeholder-gray-400 dark:placeholder-gray-500`;
+        // Strong border, clear background, better dark mode
+        return `${baseClasses} bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500/30 dark:focus:ring-blue-400/30 placeholder-gray-500 dark:placeholder-gray-400`;
     }
   };
 
